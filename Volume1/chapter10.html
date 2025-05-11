@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- CSS -->
   <meta charset="UTF-8">
   <title>Nerthus's Morning</title>
   
   <style>
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
       margin: 0;
-      padding: 1rem;
+      padding: 20px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
     }
 
     .content {
       max-width: 800px;
-      margin: auto;
-      padding: 1.5rem;
+      margin: 0 auto;
+      padding: 20px;
       background: white;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .center-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .chapter-title {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease 1s, transform 1s ease 1s; /* 3s delay added */
+      font-size: 2.5em;
+      text-align: center;
+      will-change: opacity, transfor;
+    }
+
+    .chapter-title.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .paragraph {
@@ -31,6 +61,63 @@
     }
 
     .paragraph.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-out-image {
+      opacity: 0;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      will-change: opacity, transform;
+    }
+
+    .fade-in-out-image.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-out-image.hidden {
+      opacity: 0;
+    }
+
+    .fullscreen-section {
+      height: 100vh;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .fade-element {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-element.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(-40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-down {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -52,7 +139,18 @@
 </head>
 <body>
 
-  <div class="scroll-container">
+    <!-- Title full-screen center -->
+  <section class="fullscreen-section center-container">
+    <h1 class="chapter-title fade-element">Forget Me Not</h1>
+  </section>
+
+  <!-- Image full-screen center -->
+  <section class="fullscreen-section center-container">
+    <img src="Photos/seal.png" alt="seal" class="fade-in-out-image visible" style="height: 400px;">
+  </section>
+
+  <!-- Story Content -->
+  <section class="content">
     <p class="paragraph">It was finally the day of Nerthus's brain tumor surgery. As Skadii checked his pufferfish-shaped bank filled with money and coins, he thought to himself, "Finally, today is the day."</p>
 
     <p class="paragraph">“Nerthus! It's time to get up!” he called out.</p>
@@ -61,7 +159,10 @@
 
     <p class="paragraph">“Nerthus… come on,” he urged gently. “Mm… no,” she replied stubbornly.</p>
 
-    <p class="paragraph">“… Yuh-uh…” “Nuh-uh.” “Yuh-uh…” “Nuh-uh…”</p>
+    <p class="paragraph">“… Yuh-uh…”</p>
+    <p class="paragraph">“Nuh-uh.”</p>
+    <p class="paragraph">“Yuh-uh…”</p>
+    <p class="paragraph">“Nuh-uh…”</p>
 
     <p class="paragraph">“Yuh—WH—” Before he could finish, Nerthus pulled Skadii down towards her. He landed his entire body on top of hers on the bed.</p>
 
@@ -87,7 +188,7 @@
 
     <p class="paragraph">“Are—are you sure, Nerthus?” “Yes, I am sure.” “Well… okay then.” Skadii began mixing separate batters for each flavor.</p>
 
-    <p class="paragraph">He measured butter exactly 11.8294 cm, melted it to 5.9147 cm, and cooked each pancake with perfect fluffiness. He stacked five layers per flavor on five plates.</p>
+    <p class="paragraph">He measured butter exactly 11.8294 cm, melted it to 5.9147 cm, and cooked each pancake with perfect fluffiness. As he stacked five layers per flavor of pancakes on five plates.</p>
 
     <p class="paragraph">“Phew—Done. Alright… you can take whichever flavor you want.”</p>
 
@@ -114,23 +215,53 @@
     <p class="paragraph">“Ah no—it’s fine I prefer—” “I’ll make one for you then.” Nerthus interrupted.</p>
 
     <p class="paragraph">She went to the kitchen, found an old mug with her artwork of a narwhal and dolphin swimming together, and prepared another cup. She walked back, holding it carefully on a saucer.</p>
-</div>
+    <!-- ... the rest of your paragraphs -->
+  </section>
 
-   <script>
+  <script>
+    let lastScrollTop = 0;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const direction = window.scrollY > lastScrollTop ? 'down' : 'up';
+
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          entry.target.classList.remove('fade-up', 'fade-down');
         } else {
-          entry.target.classList.remove('visible'); // remove when out of view
+          entry.target.classList.remove('visible');
+          entry.target.classList.add(direction === 'down' ? 'fade-up' : 'fade-down');
         }
+
+        lastScrollTop = window.scrollY <= 0 ? 0 : window.scrollY;
       });
     }, {
-      threshold: 0.1
+      threshold: 0.25
     });
 
-    document.querySelectorAll('.paragraph').forEach(p => observer.observe(p));
+    // Apply observer to all animated elements
+    document.querySelectorAll('.paragraph, .fade-in-out-image, .chapter-title').forEach(el => {
+      observer.observe(el);
+    });
+
+    // On load: fade in title after 3 seconds
+    window.addEventListener('DOMContentLoaded', () => {
+      const title = document.querySelector('.chapter-title');
+      title.classList.remove('visible'); // Reset
+      setTimeout(() => {
+        title.classList.add('visible');
+      }, 3000);
+    });
 
   </script>
+
 </body>
 </html>
+
+<!--script part:-->
+<!--Fade-in on Load (3 seconds): The title will still fade in after 3 seconds on page load.
+
+Scroll Fade-up/Down Effect: Using IntersectionObserver, the title will fade in when it enters the viewport (while scrolling). If it scrolls out of view, it fades out.
+
+Threshold Adjustments: The threshold: 0.5 means the title will fade in when at least 50% of it is visible on the screen. You can adjust this to suit your needs.-->
+

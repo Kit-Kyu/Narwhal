@@ -1,53 +1,193 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Story of Remembrance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume Selector</title>
   <style>
     body {
-      margin: 0;
-      padding: 1rem;
-      font-family: 'Georgia', sans-serif;
-      background: #f3f4f6;
+      font-family: sans-serif;
+      padding: 40px;
+      background-color: #f8f8f8;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .volume-container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-    .title {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+    .volume {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 220px;
+      cursor: pointer;
+      transition: transform 0.3s;
     }
 
-    .chapter-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .volume:hover {
+      transform: scale(1.05);
     }
 
-    .chapter-links a {
+    .volume img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .volume h3 {
+      margin: 0;
+      padding: 15px;
+      font-size: 1.2em;
+      background: #eee;
+    }
+
+    .chapters {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      background: #fafafa;
+      padding: 0 15px;
+    }
+
+    .chapters.open {
+      max-height: 500px;
+      padding: 15px;
+    }
+
+    .chapter-list {
+      margin: 0;
+      padding: 0;
+      height: 300px;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .chapter-list.open {
+      max-height: 1000px;
+    }
+
+    .chapter-list li {
+      margin: 6px 0;
+    }
+
+    .chapter-list li a {
       text-decoration: none;
-      color: #4e73df;
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
+      color: #333;
     }
 
-    .chapter-links a:hover {
-      transform: translateY(-5px) scale(1.05);
-      color: #2e59d9;
+    .chapter-list li a:hover {
+      text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
-  <div class="title">Don't Forget Me</div>
-  <div class="chapter-links">
-    <a href="prologue.html">Prologue</a>
-    <a href="chapter1.html">Soon to Pronounce</a>
-    <a href="chapter2.html">Soon to Pronounce</a>
-    <a href="Volume1/chapter10.html">Forget Me Not</a>
+
+  <h2>Volumes</h2>
+
+  <div class="volume-container">
+    <div class="volume" id="volume1">
+      <div style="background-color: #ddd; width: 100%; height: 150px;"></div> <!-- Placeholder -->
+      <!--<img src="volume1.jpg" alt="Volume 1">-->
+      <h3>Volume 1</h3>
+      <div class="chapters">
+        <ul class="chapter-list">
+          <li><a href="#">Prologue</a></li>
+          <li><a href="#">Chapter 1</a></li>
+          <li><a href="#">Chapter 2</a></li>
+          <li><a href="#">Chapter 3</a></li>
+          <li><a href="#">Chapter 4</a></li>
+          <li><a href="#">Chapter 5</a></li>
+          <li><a href="#">Chapter 6</a></li>
+          <li><a href="#">Chapter 7</a></li>
+          <li><a href="#">Chapter 8</a></li>
+          <li><a href="#">Chapter 9</a></li>
+          <li><a href="Volume1/chapter10.html">Chapter 10</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="volume" id="volume2">
+      <div style="background-color: #ddd; width: 100%; height: 150px;"></div> <!-- Placeholder -->
+      <!--<img src="volume2.jpg" alt="Volume 2">-->
+      <h3>Volume 2</h3>
+      <div class="chapters">
+        <ul class="chapter-list">
+          <li><a href="#">Chapter 1</a></li>
+          <li><a href="#">Chapter 2</a></li>
+          <li><a href="#">Chapter 3</a></li>
+          <li><a href="#">Chapter 4</a></li>
+          <li><a href="#">Chapter 5</a></li>
+          <li><a href="#">Chapter 6</a></li>
+          <li><a href="#">Chapter 7</a></li>
+          <li><a href="#">Chapter 8</a></li>
+          <li><a href="#">Chapter 9</a></li>
+          <li><a href="#">Chapter 10</a></li>
+          <li><a href="#">Chapter 11</a></li>
+          <li><a href="#">Chapter 12</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="volume" id="volume3">
+      <div style="background-color: #ddd; width: 100%; height: 150px;"></div> <!-- Placeholder -->
+      <!--<img src="volume3.jpg" alt="Volume 3">-->
+      <h3>Volume 3</h3>
+      <div class="chapters">
+        <ul class="chapter-list">
+          <li><a href="#">Chapter 1</a></li>
+          <li><a href="#">Chapter 2</a></li>
+          <li><a href="#">Chapter 3</a></li>
+          <li><a href="#">Chapter 4</a></li>
+          <li><a href="#">Chapter 5</a></li>
+          <li><a href="#">Chapter 6</a></li>
+          <li><a href="#">Chapter 7</a></li>
+          <li><a href="#">Chapter 8</a></li>
+          <li><a href="#">Chapter 9</a></li>
+          <li><a href="#">Chapter 10</a></li>
+          <li><a href="#">Chapter 11</a></li>
+          <li><a href="#">Chapter 12</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <script>
+    // Select all volume elements
+    const volumes = document.querySelectorAll('.volume');
+
+    // Add event listeners for each volume
+    volumes.forEach(volume => {
+      volume.addEventListener('click', () => {
+        const chapters = volume.querySelector('.chapters');
+        
+        // Toggle the 'open' class for this volume's chapters
+        chapters.classList.toggle('open');
+        
+        // Close other volumes' chapters
+        volumes.forEach(otherVolume => {
+          if (otherVolume !== volume) {
+            otherVolume.querySelector('.chapters').classList.remove('open');
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
+
+<!--HTML Structure: Each volume is wrapped in a .volume div. Inside each volume, there’s an image and a list of chapters wrapped in a .chapters div. The .chapters div starts closed (with max-height: 0).
+
+CSS: The .chapters div has a transition for max-height and padding to smoothly open and close. When .open is added to the .chapters div, it will expand to show the chapters.
+
+JavaScript: The event listener toggles the .open class on the clicked volume. It also ensures that the other volumes close their chapter lists when a new volume is clicked.-->
+
+<!--Ideas-->
+<!-- photocards art per chapter-->
