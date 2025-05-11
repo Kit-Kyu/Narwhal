@@ -9,13 +9,13 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
       margin: 0;
-      padding: 2rem;
+      padding: 1rem;
     }
 
     .content {
       max-width: 800px;
       margin: auto;
-      padding: 2rem;
+      padding: 1.5rem;
       background: white;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -25,7 +25,9 @@
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.6s ease, transform 0.6s ease;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .paragraph.visible {
@@ -35,7 +37,15 @@
 
     @media (max-width: 768px) {
       .container {
-      flex-direction: column;
+        padding: 1rem;
+        flex-direction: column;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .paragraph {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
       }
     }
   </style>
