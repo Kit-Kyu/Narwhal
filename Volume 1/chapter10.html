@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nerthus's Morning</title>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .paragraph {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      margin-bottom: 1.5rem;
+    }
+
+    .paragraph.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+      flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-container">
+    <p class="paragraph">It was finally the day of Nerthus's brain tumor surgery. As Skadii checked his pufferfish-shaped bank filled with money and coins, he thought to himself, "Finally, today is the day."</p>
+
+    <p class="paragraph">“Nerthus! It's time to get up!” he called out.</p>
+
+    <p class="paragraph">“Mmm…” Nerthus grumbled in response. Skadii walked into their bedroom and saw Nerthus still fast asleep, her blanket draped over her chest.</p>
+
+    <p class="paragraph">“Nerthus… come on,” he urged gently. “Mm… no,” she replied stubbornly.</p>
+
+    <p class="paragraph">“… Yuh-uh…” “Nuh-uh.” “Yuh-uh…” “Nuh-uh…”</p>
+
+    <p class="paragraph">“Yuh—WH—” Before he could finish, Nerthus pulled Skadii down towards her. He landed his entire body on top of hers on the bed.</p>
+
+    <p class="paragraph">“Ngh!? T-Too heavy!” she exclaimed. “Ah—sorry… but you pulled me!” Skadii protested. “Then… Get off me!” As she shouted and started pounding her fists on Skadii’s back. He quickly got up, only to see Nerthus sinking a bit into the mattress, her entire body and expression indicating she felt paralyzed by the morning.</p>
+
+    <p class="paragraph">“Come on, Nerthus. It's time to get up,” he said, offering his hand. She rolled her eyes, but eventually took it.</p>
+
+    <p class="paragraph">Over the past few years of their married life, the couple had grown closer…</p>
+
+    <p class="paragraph">“Do you want anything for breakfast, Nerthus?” Skadii asked as they both walked to the kitchen. Nerthus sat down at the dining table, looking a bit more awake.</p>
+
+    <p class="paragraph">“Mmmm… I want to have… uh.” “Ah! H-How about we get some pancakes with bacon? That should be all good.” Skadii cut off her train of thought with a breakfast suggestion.</p>
+
+    <p class="paragraph">“Oh, huh… okay.” Skadii let out a “Phew—” thinking Nerthus shouldn’t have to think much today.</p>
+
+    <p class="paragraph">Skadii moved around the kitchen, grabbing ingredients and utensils. “Alright—Flour… eggs… water… sugar—Do you want it to be flavored?”</p>
+
+    <p class="paragraph">“You can do that?” Nerthus asked, curious. “I mean… I am making the batter for the pancakes. So—Yeah, I can,” Skadii replied, pulling out assorted jams.</p>
+
+    <p class="paragraph">“Alright— I have strawberry, blueberry… I got mango, grapes, and raspberries. So… which jam do you want?”</p>
+
+    <p class="paragraph">“Hm… can you make all of them each?” “What—” “Yeah… like one for strawberry… one for blueberry— this one is mango and one for grapes— Oh, and raspberries too.”</p>
+
+    <p class="paragraph">“Are—are you sure, Nerthus?” “Yes, I am sure.” “Well… okay then.” Skadii began mixing separate batters for each flavor.</p>
+
+    <p class="paragraph">He measured butter exactly 11.8294 cm, melted it to 5.9147 cm, and cooked each pancake with perfect fluffiness. He stacked five layers per flavor on five plates.</p>
+
+    <p class="paragraph">“Phew—Done. Alright… you can take whichever flavor you want.”</p>
+
+    <p class="paragraph">“Hmp.” Nerthus picked up a fork, poked a blueberry pancake, and said, “The softness is immensely interesting. You made the pancake way fluffier than I anticipated.”</p>
+
+    <p class="paragraph">“Um… It's just a pancake, Nerthus.” “It doesn’t matter,” she replied, taking a bite. Her fork dropped as she groaned softly.</p>
+
+    <p class="paragraph">“I guess I’ll take it as good—” Skadii began walking back, but Nerthus grabbed his wrist. “Hm—? Nerthus?”</p>
+
+    <p class="paragraph">She looked up and gently asked, “Can you… eat with me, please?”</p>
+
+    <p class="paragraph">Skadii was speechless. Her eyes were soft. “Please…” she repeated. He hesitantly sat down beside her, and they began eating together.</p>
+
+    <p class="paragraph">“Do you want this with coffee?” he asked. “I want this hopefully to be chocolate instead.”</p>
+
+    <p class="paragraph">“Oh—well alright then.” He measured 0.14 kg of cocoa, 100 g of sugar, and 240 g of water to make the perfect chocolate drink. He set the cup in front of her.</p>
+
+    <p class="paragraph">Nerthus sighed. “Hm? What’s wrong, Nerthus?” Skadii asked. “It’s just…”</p>
+
+    <p class="paragraph">She held the cup with both hands, looking at the ripples. “Where… Where is your cup of chocolate?”</p>
+
+    <p class="paragraph">“Hm?” Skadii was confused. “I don’t like drinking alone. So…”</p>
+
+    <p class="paragraph">“Ah no—it’s fine I prefer—” “I’ll make one for you then.” Nerthus interrupted.</p>
+
+    <p class="paragraph">She went to the kitchen, found an old mug with her artwork of a narwhal and dolphin swimming together, and prepared another cup. She walked back, holding it carefully on a saucer.</p>
+</div>
+
+   <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible'); // remove when out of view
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.paragraph').forEach(p => observer.observe(p));
+
+  </script>
+</body>
+</html>
